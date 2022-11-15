@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+        <!-- Bulma icons -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+
+    <!-- JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+    <title>Test Register JoinUp</title>
+</head>
+
+<body style="background-color: rgb(0, 0, 0);">
+  <center>
+    <div class="tile is-ancestor" style="margin-left: 40%; margin-top: 5%">
+            <div class="tile is-vertical is-4">
+                <div class="tile is-parent">
+                    <article class="tile is-child notification is-primary">
+                        <p class="title" style="color: black;">Registro</p>
+                        <p class="subtitle" style="color: black;"><i>Access to users</i></p>
+                        <div class="content">
+                            <form action="" method="post">
+                              {% csrf_token %}
+                                <div class="field">
+                                    <label class="label"></label>
+                                    <div class="control has-icons-left has-icons-right">
+                                      {{ form.name }}
+                                      <span class="icon is-small is-left">
+                                        <i class="fas fa-user"></i>
+                                      </span>
+                                      <span class="icon is-small is-right">
+                                        <i class="fas fa-check"></i>
+                                      </span>
+                                </div>
+                                <div class="field">
+                                    <label class="label"></label>
+                                    <div class="control has-icons-left has-icons-right">
+                                      {{ form.surnames }}
+                                      <span class="icon is-small is-left">
+                                        <i class="fas fa-user"></i>
+                                      </span>
+                                      <span class="icon is-small is-right">
+                                        <i class="fas fa-check"></i>
+                                      </span>
+                                </div>
+                                </div>
+                                <div class="field">
+                                    <label class="label"></label>
+                                    <div class="control has-icons-left has-icons-right">
+                                      {{ form.email }}
+                                      <span class="icon is-small is-left">
+                                        <i class="fas fa-envelope"></i>
+                                      </span>
+                                      <span class="icon is-small is-right">
+                                        <i class="fas fa-check"></i>
+                                      </span>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label class="label"></label>
+                                    <div class="control has-icons-left has-icons-right">
+                                        {{ form.phone }}
+                                      <span class="icon is-small is-left">
+                                        <i class="fas fa-phone"></i>
+                                      </span>
+                                      <span class="icon is-small is-right">
+                                        <i class="fas fa-check"></i>
+                                      </span>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label class="label"></label>
+                                    <div class="control has-icons-left has-icons-right">
+                                        {{ form.hobbies }}
+                                      <span class="icon is-small is-left">
+                                        <i class="fas fa-globe"></i>
+                                      </span>
+                                      <span class="icon is-small is-right">
+                                        <i class="fas fa-check"></i>
+                                      </span>
+                                    </div>
+                                </div>
+                                <p></p>
+                                <div class="field is-grouped" style="margin-left: 30%;">
+                                    <button type="submit" class="button is-black is-rounded" name="btnSignup" value="ok" style="margin-left: 12%;">Registrarse</button>
+                                </div>
+                            </form>
+                        </div>
+                    </article>
+                  </div>
+            </div>
+        </div>
+    </div>
+  </center>
+  <img src="https://play-lh.googleusercontent.com/Nnz73gYafy_vDaj0AB9v7ia0l2e4y47CGa5JAhgiVuD0OQ-Ffn-zRksK7ML3pZmwx5Ev" style="width: 8%; margin-left: 46%; margin-top: 2%">
+</body>
+</html>

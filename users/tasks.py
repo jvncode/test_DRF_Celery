@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-#@shared_task(name="send_email")
+@shared_task(name="send_email")
 def send_mail(email):
     mail = EmailSender(
         host='smtp.gmail.com',
@@ -23,7 +23,7 @@ def send_mail(email):
     )
     return mail
 
-#@shared_task(name="send_sms")
+@shared_task(name="send_sms")
 def send_sms(number):
     client = instasent.Client(os.environ.get('TOKEN_SEND_SMS', default=''))
     response = client.send_sms(

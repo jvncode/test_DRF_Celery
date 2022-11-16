@@ -10,7 +10,6 @@ from users import tasks
 import logging
 import os
 from dotenv import load_dotenv
-from .tasks import send_mail, send_sms
 
 load_dotenv()
 
@@ -49,9 +48,9 @@ class User_APIView(APIView):
                 serializer.save()
                 logging.debug("USER APIVIEW POST - SUCCESS")
                 if os.environ.get('APP_ENV', default='') == 'PROD':
-                    send_mail(request.data['email'])
-                    send_sms(request.data['phone'])
-                    logging.debug("USER APIVIEW PROD POST - SUCCESS")
+                    tasks.send_mail.delay(request.data['email'])
+                    tasks.send_sms.delay(request.data['phone'])
+                    logging.debug("USER APIVIEW PROD POST TASKS - SUCCESS")
                 return Response(serializer.data, status=status.HTTP_201_CREATED)
         except Exception as e:
             logging.error("USER APIVIEW POST : {}".format(e))

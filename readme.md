@@ -3,10 +3,13 @@
 
 ---------------
 
-
 ## Installation guide 🔧
 
-- Activar entorno virtual
+- Activar de entorno virtual
+```
+source <entorno_virtual>/bin/activate
+```
+- Instalar dependencias
 
 ```
 pip3 install --upgrade pip
@@ -14,27 +17,37 @@ pip3 install --upgrade pip
 ```
 pip3 install --no-cache-dir -r requirements.txt
 ```
+- Configuración de migraciones
 ```
-python3 manage.py makemigrations && python3 manage.py migrate
+python3 manage.py migrate
 ```
+- Crear usuario administrador
+```
+python3 manage.py createsuperuser
+```
+- Iniciar aplicación
 ```
 python3 manage.py runserver
 ```
-
-* Activar paralelamente en otra terminal el servicio Celery
+- Paralelamente en otra terminal, activar servicio Celery
 ```
 celery -A test_app worker -l info
 ```
 ---------------
+## Admin
+- Acceso al administrador para autenticación y gestión de usuarios
+```
+http://localhost:8000/admin
+```
 
 ## Endpoints
-* Signup (POST)
+* Signup (POST) - Creación de nuevos usuarios
 ```
 http://localhost:8000/api/v1/signup
 ```
-* Profile (GET)
+* Profile (GET) - Verificación de usuario autenticado
 ```
-http://localhost:8000/api/v1/profile/<id>
+http://localhost:8000/api/v1/profile
 ```
 ---------------
 
@@ -45,10 +58,10 @@ curl -H "Content-Type: application/json" -X POST -d '{"name":"Helena","surnames"
 ```
 * Profile (GET)
 ```
-curl --location --request GET 'http://127.0.0.1:8000/api/v1/profile/<id>'
+curl --location --request GET 'http://127.0.0.1:8000/api/v1/profile'
 ```
-
 ---------------
+
 ## Application built with 🛠️
 
 * [Python 3.7](https://www.python.org/)

@@ -1,5 +1,4 @@
 ## Test Django Rest Framework & Celery
-**JoinUp Technical Test**
 
 ---------------
 
